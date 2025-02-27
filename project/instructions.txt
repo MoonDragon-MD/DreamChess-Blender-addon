@@ -1,0 +1,28 @@
+sudo apt-get install freeglut3 freeglut3-dev
+
+go to /../project/library
+
+git clone https://github.com/GPSnoopy/TriStripper.git
+
+Overwrite the files you find in the Tristripper-OverWrite folder
+
+cd TriStripper
+mkdir build && cd build
+cmake ..
+make
+
+go to /../project/library
+g++ -o dcmstrip dcmstrip.cpp -I./TriStripper/include ./TriStripper/lib/libTriStripper.a
+
+copy dcmstrip to /../project/io_dreamchess_exporter
+
+go to /../project/io_dreamchess_exporter
+
+zip -r io_dreamchess_exporter.zip io_dreamchess_exporter
+
+Now you can install the zip in blender
+
+Once installed you will have to go to the folder 
+/home/USER/.config/blender/2.82/scripts/addons/io_dreamchess_exporter
+(Change according to your user and version of blender)
+and give the per execution to the dcmstrip file
