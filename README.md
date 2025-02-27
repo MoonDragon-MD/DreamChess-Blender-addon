@@ -1,5 +1,5 @@
 # DreamChess-Blender-addon
-Addon for Blender that allows you to export DCM for Dreamchess Game
+Addon for Blender that allows you to export DCM for [DreamChess](https://github.com/dreamchess/dreamchess) Game
 
 ### Description:
 
