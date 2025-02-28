@@ -49,7 +49,7 @@ Here is a screenshot of the game, the pawn on Blender is a cube now is this stra
 
 [Download the add-on](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/releases/tag/V1) 
 
-Install it in Blender (tested on version 2.82)
+Install it in Blender (tested on version 2.82 and 2.83.20)
 
 Go to the folder
 
