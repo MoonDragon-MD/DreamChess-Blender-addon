@@ -67,6 +67,6 @@ Downloading the sources
 
 inside the "project" folder you will find the instructions in the file “instructions.txt”
 
-NB: The "dcmstrip.cpp" file comes from [here](https://github.com/dreamchess/dreamchess-tools/blob/master/src/dcmstrip.cpp) 
+NB: The "dcmstrip.cpp" file comes from [here](https://github.com/dreamchess/dreamchess-tools/blob/master/src/dcmstrip.cpp)  (I did not edit this file)
 
 Those who would like to see the old version of the addon here it is: [dcm_export.py](https://github.com/dreamchess/dreamchess-tools/blob/master/src/dcm_export.py) 
