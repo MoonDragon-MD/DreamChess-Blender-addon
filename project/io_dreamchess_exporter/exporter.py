@@ -89,7 +89,7 @@ def write(filepath, context):
                 poly = triangulated_mesh.polygons[face_index]
                 v = poly.vertices
                 # Ordine invertito per correggere il winding
-                file.write(f"{v[2] + 1} {v[1] + 1} {v[0] + 1} 0 0 0.5 0.5 1 1\n")
+                file.write(f"{v[2]} {v[1]} {v[0]} 0 0 0.5 0.5 1 1\n")
         else:
             for face_index in ordered_faces:
                 poly = triangulated_mesh.polygons[face_index]
@@ -103,7 +103,7 @@ def write(filepath, context):
                 uv1 = uv_layer.data[loop_indices[1]].uv
                 uv2 = uv_layer.data[loop_indices[2]].uv
                 # Scrittura con ordine invertito per correggere il winding
-                file.write(f"{v2 + 1} {v1 + 1} {v0 + 1} {uv2.x:.6f} {uv2.y:.6f} {uv1.x:.6f} {uv1.y:.6f} {uv0.x:.6f} {uv0.y:.6f}\n")
+                file.write(f"{v0} {v1} {v2} {uv0.x:.6f} {uv0.y:.6f} {uv1.x:.6f} {uv1.y:.6f} {uv2.x:.6f} {uv2.y:.6f}\n")
 
     # Conversione con dcmstrip
     print("File temporaneo scritto, chiamata all'eseguibile dcmstrip")
