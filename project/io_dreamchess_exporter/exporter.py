@@ -5,8 +5,8 @@ import subprocess
 from collections import defaultdict
 
 def triangulate_mesh(obj):
-    """Triangola la mesh dell'oggetto attivo."""
-    print(f"Triangolazione della mesh: {obj.name}")
+    """The mesh of the active object triangola."""
+    print(f"Mesh triangulation: {obj.name}")
     bm = bmesh.new()
     bm.from_mesh(obj.data)
     bmesh.ops.triangulate(bm, faces=bm.faces[:])
@@ -53,18 +53,18 @@ def get_ordered_triangles(mesh):
     return order
 
 def write(filepath, context):
-    """Esporta la mesh attiva in formato DCM per DreamChess."""
-    print("Inizio esportazione verso:", filepath)
+    """Export the active MESH in DCM format for Dreamchess."""
+    print("Start export to:", filepath)
     
     # Verifica che ci sia un oggetto mesh attivo
     obj = context.view_layer.objects.active
     if not obj or obj.type != 'MESH':
-        raise ValueError("Nessun oggetto mesh attivo selezionato")
+        raise ValueError("No active mesh object selected")
 
     # Triangola la mesh
     triangulated_mesh = triangulate_mesh(obj)
     temp_file = filepath + ".0000"  # File temporaneo in formato "0000"
-    print("Scrittura del file temporaneo:", temp_file)
+    print("Writing of the temporary file:", temp_file)
 
     # Ottieni l'ordine dei triangoli
     ordered_faces = get_ordered_triangles(triangulated_mesh)
@@ -84,7 +84,7 @@ def write(filepath, context):
         file.write(f"{len(triangulated_mesh.polygons)}\n")
         uv_layer = triangulated_mesh.uv_layers.active
         if uv_layer is None:
-            print("Nessuna mappa UV trovata, uso UV predefinite")
+            print("No UV map found, predefined UV use")
             for face_index in ordered_faces:
                 poly = triangulated_mesh.polygons[face_index]
                 v = poly.vertices
@@ -106,25 +106,25 @@ def write(filepath, context):
                 file.write(f"{v0} {v1} {v2} {uv0.x:.6f} {uv0.y:.6f} {uv1.x:.6f} {uv1.y:.6f} {uv2.x:.6f} {uv2.y:.6f}\n")
 
     # Conversione con dcmstrip
-    print("File temporaneo scritto, chiamata all'eseguibile dcmstrip")
+    print("Written temporary file, called to the DCMSTRIP executable")
     try:
         dcmstrip_path = os.path.join(os.path.dirname(__file__), "dcmstrip")
         cache_size = "2048"  # Valore di cache_size come stringa
         subprocess.run([dcmstrip_path, temp_file, filepath, cache_size], check=True)
-        print("Conversione completata con successo!")
+        print("Conversion successfully completed!")
     except subprocess.CalledProcessError as e:
-        print(f"Errore durante la conversione: {e}")
+        print(f"Error during conversion: {e}")
         raise
     except FileNotFoundError:
-        print("Errore: eseguibile 'dcmstrip' non trovato. Assicurati che sia nella directory dell'addon.")
+        print("Error: executable 'dcmstrip' not found. Make sure it's in the ADDON Directory.")
         raise
 
     # Pulizia
     os.remove(temp_file)
     bpy.data.meshes.remove(triangulated_mesh)
-    print("Esportazione completata con successo")
-    return "Esportazione completata: " + filepath
+    print("Export successfully completed")
+    return "Export Completed: " + filepath
 
 # Esempio di utilizzo (opzionale, per test diretto in Blender)
 if __name__ == "__main__":
-    write("/percorso/del/tuo/file.dcm", bpy.context)
+    write("/path/of/your/file.dcm", bpy.context)

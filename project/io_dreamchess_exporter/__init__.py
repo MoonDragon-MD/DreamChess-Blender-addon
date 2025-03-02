@@ -1,11 +1,11 @@
 bl_info = {
-    "name": "Esporta DCM DreamChess (.dcm)",
-    "author": "The DreamChess project",
-    "version": (1, 1, 1),
+    "name": "Export DCM Dreamchess (.dcm)",
+    "author": "MoonDragon",
+    "version": (1, 1, 2),
     "blender": (2, 82, 0),
     "location": "File > Export > DreamChess DCM",
     "description": "Export selected mesh to DreamChess Model format (.dcm) for DreamChess game",
-    "doc_url": "https://www.dreamchess.org/",
+    "wiki_url": "https://github.com/MoonDragon-MD/DreamChess-Blender-addon",
     "category": "Import-Export",
     "warning": "",
 }
