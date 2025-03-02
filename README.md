@@ -41,7 +41,7 @@ If the script does not respect this order, the resulting DCM file will have tria
 
 Here is a screenshot of the game
 
-![alt text](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/blob/main/img.jpg?raw=true)
+![alt text](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/blob/main/img2.jpg?raw=true)
 
 ![alt text](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/blob/main/img1.jpg?raw=true)
 
