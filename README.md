@@ -3,7 +3,7 @@ Addon for Blender that allows you to export DCM for [DreamChess](https://github.
 
 ### Description:
 
-First of all, I will explain why it does not work optimally:
+I first explain the differences with the original addon:
 
 1) When it was created a very old version of Blender was used (I estimate it to be version 2.3)
 
@@ -39,11 +39,11 @@ In the modern system, the data are organized in “loops,” which connect verti
 
 If the script does not respect this order, the resulting DCM file will have triangles with mismatched UVs or indices, causing distortions.
 
-Here is a screenshot of the game, the pawn on Blender is a cube now is this strange figure
+Here is a screenshot of the game
 
 ![alt text](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/blob/main/img.jpg?raw=true)
 
-*Could you help me to make it work?*
+![alt text](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/blob/main/img1.jpg?raw=true)
 
 ### Installation
 
