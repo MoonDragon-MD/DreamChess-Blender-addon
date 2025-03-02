@@ -51,7 +51,7 @@ Notice how it looks identical to the original
 
 ### Installation
 
-[Download the add-on](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/releases/tag/V1) 
+[Download the add-on](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/releases/tag/V1stable) 
 
 Install it in Blender (tested on version 2.82 and 2.83.20)
 
