@@ -39,9 +39,13 @@ In the modern system, the data are organized in “loops,” which connect verti
 
 If the script does not respect this order, the resulting DCM file will have triangles with mismatched UVs or indices, causing distortions.
 
-Here is a screenshot of the game
+Here is a screenshot of the game:
+
+Example of a cube
 
 ![alt text](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/blob/main/img2.jpg?raw=true)
+
+Notice how it looks identical to the original
 
 ![alt text](https://github.com/MoonDragon-MD/DreamChess-Blender-addon/blob/main/img1.jpg?raw=true)
 
